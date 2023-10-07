@@ -5,6 +5,7 @@ out/
 
 /.idea
 /target
+/src/seguiment
 proves
 
 *.class
