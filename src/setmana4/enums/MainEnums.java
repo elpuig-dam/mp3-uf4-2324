@@ -36,9 +36,27 @@ public class MainEnums {
         }
 
         //TODO Treure un llistat de notes de cada un dels alumnes
-
+        for(Alumne a : alumneList) {
+            System.out.println(a.getNom());
+            System.out.println("-------------");
+            a.getNotes().forEach((k,v) -> System.out.printf("%s -> %s%n",k,v));
+            System.out.println("-------------");
+        }
 
         //TODO Treure la nota mitja dels alumnes i llistat en ordre alfabètic
+        Map<String,Float> notesMitges = new TreeMap<>();
+        for(Alumne a : alumneList) {
+            float notaM=0;
+            for (Map.Entry entry : a.getNotes().entrySet()) {
+                Qualifier qf = (Qualifier) entry.getValue();
+                notaM += qf.getValor();
+            }
+            notaM = notaM / a.getNotes().size();
+            System.out.printf("Nota mitja de %s és %f%n",a.getNom(), notaM);
+            notesMitges.put(a.getNom(),notaM);
+        }
+
+        notesMitges.forEach((k,v)-> System.out.println(k + "->" + v));
 
     }
 }
