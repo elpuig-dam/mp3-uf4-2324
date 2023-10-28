@@ -1,9 +1,6 @@
 package setmana4.enums;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MainEnums {
 
@@ -44,6 +41,8 @@ public class MainEnums {
         }
 
         //TODO Treure la nota mitja dels alumnes i llistat en ordre alfabètic
+        //Poden ordenar primer els alumnes o podem crear un treemap amb alumne i nota mitja ordenat per la clau
+        //alumneList.sort(Comparator.comparing(Alumne::getNom));
         Map<String,Float> notesMitges = new TreeMap<>();
         for(Alumne a : alumneList) {
             float notaM=0;
